@@ -8,7 +8,7 @@
 ## General info
 This application was created for a thesis. I expanded my knowledge about Django Rest Framework and Vue.js. I learned about JWT authentication, Vuex and make responsive pages.
 
-# Adopt animals app
+## Adopt animals app
 The application allows the user to view animals added by others, filtering and check details of them. User can also create an account and log in.
 Logged in user can add new animal via the form. He can also change the password, e-mail address, phone number and delete the animal he has added.
 
