@@ -20,8 +20,8 @@ Logged in user can add new animal via the form. He can also change the password,
 ## How to Install and Run the Project
 ### Backend
 ```
-$ clone this repository - git clone https://github.com/Dariusz95/Todo-app
-$ cd Todo-app\todos_backend
+$ clone this repository - git clone https://github.com/Dariusz95/Adopt-animals-app
+$ cd Adopt-animals-app\Backend
 $ pip install virtualenv
 $ virtualenv env
 ```
@@ -42,11 +42,12 @@ $ python manage.py runserver
 ```
 ### Frontend
 ```
-$ cd Todo-app\todos_frontend
+$ cd Adopt-animals-app\Frontend
 $ npm install
 $ npm run serve
 ```
 
 # technologies
 * Vue.js 2.6.11
-* Django Rest Framework 3.12
+* Django Rest Framework 3.13.1
+* Django 3.1.4
