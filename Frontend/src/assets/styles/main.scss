@@ -1,0 +1,49 @@
+@import "_var.scss";
+@import "_navbar.scss";
+@import "_home.scss";
+@import "_adopt.scss";
+@import "_petDetail.scss";
+@import "_login.scss";
+@import "_userSidebar.scss";
+@import "_userProfile.scss";
+@import "_register.scss";
+@import "_mixins.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+//
+// .bgcMainColor {
+//   background-color: rgba($mainColor, 0.5);
+// }
+.wrapper {
+  max-width: 80%;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 10;
+  padding-top: 60px;
+}
+.wrapper.wrapUserProfile {
+  padding-top: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Montserrat";
+  position: relative;
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    margin: 0 auto;
+    max-width: 95%;
+  }
+  .wrapper.container {
+    max-width: 100%;
+  }
+}

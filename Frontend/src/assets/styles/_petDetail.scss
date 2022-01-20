@@ -1,0 +1,124 @@
+.detail {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+
+  .row {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__gallery {
+    // padding: 15px;
+    background-color: $homeColor;
+    .v-window {
+      // height: 350px;
+      // width: 66%;
+      &__container {
+        .v-window__next {
+          right: 0;
+        }
+      }
+    }
+  }
+  &__user {
+    background-color: $homeColor;
+    display: flex;
+    flex-direction: column;
+
+    &-info {
+      margin: 15px 0;
+      .v-icon {
+        font-size: 2.6rem;
+        width: 30%;
+      }
+      span {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  &__description {
+    padding: 25px 30px;
+    margin-top: 1rem;
+    background-color: $homeColor;
+
+    &-item {
+      display: flex;
+      padding: 5px 0;
+      flex-wrap: wrap;
+      .date {
+        font-size: 1.6rem;
+      }
+      .name {
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+      + .size {
+        font-size: 1.6rem;
+      }
+      + .age {
+        font-size: 1.6rem;
+      }
+      + .describe {
+        display: flex;
+        flex-direction: column;
+        span {
+          font-size: 2.1rem;
+          font-weight: bold;
+        }
+      }
+      .description {
+        max-width: 100%;
+        font-size: 2rem;
+        display: block;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 20px 0 0;
+  }
+  .detail {
+    padding: 0;
+    .detail__user {
+      margin-left: 0;
+    }
+  }
+}
+// .detailImg {
+//   min-width: 50%;
+//   height: 450px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   img {
+//     border-radius: 15px;
+//     max-width: 100%;
+//     max-height: 100%;
+//   }
+// }
+// .detailInfo {
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+//   margin-top: 20px;
+//   .detail {
+//     display: flex;
+//     width: 65%;
+//     margin-top: 5px;
+//     padding: 1.5rem 2rem;
+//     font-size: 1.7rem;
+//     font-weight: bold;
+//     span {
+//       width: 40%;
+//     }
+//     div {
+//       width: 70%;
+//     }
+//   }
+// }

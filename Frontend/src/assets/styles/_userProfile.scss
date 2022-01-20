@@ -1,0 +1,149 @@
+.user {
+  margin: 0;
+  display: flex;
+  &-menu {
+    // margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    .v-item-group {
+      width: 60%;
+    }
+    .v-list-item {
+      position: relative;
+      .v-icon {
+        font-size: 3.5rem;
+        // color: black;
+      }
+      &__title {
+        font-size: 1.5rem;
+        font-family: "Montserrat";
+      }
+    }
+  }
+  &-info {
+    width: 75%;
+    // margin-left: 3rem;
+    .password {
+      .error-text {
+        color: red;
+        font-size: 1.2rem;
+        opacity: 0;
+      }
+      .redError {
+        input {
+          border-color: red;
+          background-color: none;
+          font-size: 2rem;
+        }
+        .error-text {
+          opacity: 1;
+        }
+      }
+    }
+
+    .animal-area {
+      position: relative;
+      .v-alert {
+        margin-top: 10px;
+        display: none;
+      }
+      &__animals {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 20px;
+        .animal {
+          margin: 10px;
+          position: relative;
+          flex: 0 1 calc(33% - 20px);
+          .deleteBtn {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 40px;
+            height: 40px;
+            z-index: 10;
+            margin-right: 0;
+          }
+        }
+      }
+      &__name {
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
+      }
+    }
+  }
+}
+.v-responsive__content {
+  display: none;
+}
+
+.dialogBtn {
+  .v-btn__content {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .user {
+    &-menu {
+      display: flex;
+      justify-content: center;
+      .v-item-group {
+        width: 100%;
+      }
+    }
+    &-info {
+      .edit-user {
+        &__btn {
+          .v-btn {
+            margin-right: 0;
+            width: 140px;
+            justify-content: space-around;
+          }
+        }
+      }
+
+      .animal-area {
+        .v-alert {
+          display: block;
+        }
+        &__animals {
+          margin-top: 10px;
+          .animal {
+            flex-basis: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  .user {
+    &-menu {
+      display: flex;
+      justify-content: center;
+      .v-item-group {
+        width: 100%;
+      }
+    }
+    &-info {
+      margin-left: 0;
+      .animal-area {
+        .v-alert {
+          display: block;
+        }
+        &__animals {
+          margin-top: 15px;
+          .animal {
+            margin: 5px;
+            flex: 0 1 calc(50% - 10px);
+          }
+        }
+      }
+    }
+  }
+}

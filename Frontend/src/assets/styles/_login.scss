@@ -1,0 +1,296 @@
+@import "./_mixins.scss";
+.login-page,
+.register-page {
+  @include center-page;
+
+  // background: linear-gradient(
+  //   175deg,
+  //   rgba(14, 255, 0, 1) 0%,
+  //   rgba(21, 255, 0, 0.8071603641456583) 19%,
+  //   rgba(25, 255, 0, 0.48) 35%,
+  //   rgba(41, 255, 0, 0%) 100%
+  // );
+  background: linear-gradient(
+    175deg,
+    $homeColor 0%,
+    $homeColor 19%,
+    $homeColor 35%,
+    rgba(41, 255, 0, 0) 100%
+  );
+  padding-top: 100px;
+
+  .login-form,
+  .register-form {
+    padding: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 450px;
+    flex-direction: column;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
+      0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1),
+      0 16px 16px rgba(0, 0, 0, 0.1);
+
+    border-radius: 15px;
+    position: relative;
+    // background: rgba($mainColor, 0.06);
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.16);
+    .v-icon {
+      display: block;
+    }
+    h1 {
+      font-size: 3rem;
+      color: white;
+    }
+    .main-icon {
+      position: absolute;
+      top: -40px;
+      display: block;
+      padding: 15px;
+      border-radius: 60px;
+      font-size: 60px;
+      background-color: white;
+      color: rgba(14, 255, 0, 1);
+    }
+
+    // &-form {
+    &__input {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      position: relative;
+      label {
+        display: none;
+      }
+      input {
+        color: #0eff00;
+        height: 30px;
+        margin: 10px 0;
+        padding-left: 10px;
+        font-size: 1.3rem;
+        background: white;
+        padding: 25px 60px 25px 60px;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+      }
+      input::placeholder {
+        color: #0eff00;
+        text-align: center;
+        font-size: 16px;
+      }
+      ul {
+        li {
+          list-style: none;
+          color: red;
+        }
+      }
+    }
+    .btn {
+      background-color: #0eff00;
+      border-radius: 25px;
+      padding: 20px 60px;
+      margin: 15px 0;
+      transition: background-color 0.3s;
+      font-size: 1.2rem;
+      color: white;
+    }
+    .btn:hover {
+      @include btnHover;
+    }
+    p {
+      line-height: 2rem;
+      font-size: 16px;
+      .router-link-active {
+        color: deepskyblue;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.login-form {
+  height: 650px;
+}
+
+.register-page {
+  .register-form {
+    min-height: 650px;
+    margin-top: 120px;
+    .btn {
+      margin: 25px 0;
+    }
+    &__input {
+      margin: 15px 0;
+    }
+    &__input.errorValid {
+      input {
+        border: 1px solid red;
+      }
+    }
+    h1 {
+      margin: 10px 0;
+    }
+  }
+}
+
+.errorValid {
+  input {
+    border: 1px solid red;
+    animation: inputShake 0.2s;
+    box-shadow: none !important;
+  }
+}
+
+@keyframes inputShake {
+  33% {
+    transform: translateX(-0.5rem);
+  }
+  66% {
+    transform: translateX(0.5rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.login-page .login-form__input .v-icon,
+.register-page .register-form__input .v-icon {
+  position: absolute;
+  color: #0eff00;
+  padding: 0;
+  font-size: 35px;
+  background: none;
+  left: 11px;
+  top: 15px;
+}
+
+@media screen and (max-width: 576px) {
+  .login-page,
+  .register-page {
+    padding-top: 0px;
+    .login-form::before,
+    .login-form::after,
+    .register-form::before,
+    .register-form::after {
+      content: none;
+    }
+    .login-form,
+    .register-form {
+      padding: 100px 20px 15px;
+      width: 100vw;
+      min-height: 100vh;
+      border-radius: 0;
+      h1 {
+        color: #fff;
+      }
+      .main-icon {
+        position: relative;
+        top: 0;
+        display: block;
+        padding: 15px;
+        border-radius: 60px;
+        font-size: 60px;
+        background-color: white;
+        color: rgba(14, 255, 0, 1);
+      }
+      &__input {
+        position: relative;
+        label {
+          display: none;
+        }
+        input {
+          color: #0eff00;
+          // height: 30px;
+          margin: 10px 0;
+          padding-left: 10px;
+          font-size: 1.3rem;
+          background: white;
+          padding: 25px 60px 25px 60px;
+          border: none;
+          border-radius: 10px;
+          font-size: 16px;
+        }
+        input::placeholder {
+          color: #0eff00;
+          text-align: center;
+          font-size: 16px;
+        }
+      }
+      .btn {
+        margin: 10px 0;
+        padding-left: 10px;
+        font-size: 1.3rem;
+        padding: 25px 0;
+        border: none;
+        width: 100%;
+        border-radius: 10px;
+        font-size: 16px;
+      }
+    }
+  }
+  .login-page .login-form__input .v-icon,
+  .register-page .register-form__input .v-icon {
+    position: absolute;
+    color: #0eff00;
+    padding: 0;
+    font-size: 35px;
+    background: none;
+    left: 11px;
+    top: 15px;
+  }
+  .register-page {
+    .register-form {
+      margin-top: 0;
+      &__input {
+        margin: 5px 0;
+      }
+      .btn {
+        margin: 25px 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 577px) and(max-width: 976px) {
+  .login-page,
+  .register-page {
+    padding-top: 0px;
+    .login-form,
+    .register-form {
+      padding: 60px 20px 15px;
+
+      background: rgb(0 0 0 / 16%);
+      h1 {
+        color: #fff;
+      }
+      .v-icon {
+        position: relative;
+        top: 0;
+      }
+      &__input {
+        position: relative;
+        label {
+          display: none;
+        }
+      }
+      .btn {
+        transition: background-color 0.3s;
+        font-size: 1.2rem;
+        font-size: 14px;
+      }
+    }
+  }
+  .login-page .login-form__input .v-icon,
+  .register-page .register-form__input .v-icon {
+    position: absolute;
+    color: #0eff00;
+    padding: 0;
+    font-size: 35px;
+    background: none;
+    left: 11px;
+    top: 15px;
+  }
+}

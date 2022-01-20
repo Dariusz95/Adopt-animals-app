@@ -1,0 +1,69 @@
+// .v-icon {
+//   padding: 3px;
+//   border: 2px solid greenyellow;
+//   border-radius: 3px;
+//   background: green;
+// }
+// .v-list {
+//   padding: 0;
+// }
+
+// .v-card {
+//   position: absolute;
+//   top: 68px;
+//   right: 0;
+//   z-index: 100;
+//   background-color: rgba(255, 255, 255, 0.8);
+
+//   .v-navigation-drawer {
+//     width: 300px;
+
+//     .v-list-item__title {
+//       padding: 0 1.5rem;
+//     }
+//   }
+// }
+
+// .v-list {
+//   padding: 0;
+//   &-group {
+//     &__items {
+//       margin-left: 5 px;
+//       // background-color: rgba(255, 255, 255, 0.2);
+//       // background-color: red;
+//       .v-list-item {
+//         min-height: 23px;
+//         font-size: 1.2rem;
+//         margin-left: 15px;
+//         &__content {
+//           padding: 6px 0;
+//         }
+//         &__icon {
+//           margin: 0 5px;
+//         }
+//       }
+//     }
+//     .owner {
+//       .v-list-item__content {
+//         padding: 0;
+//       }
+//       &__info {
+//         display: flex;
+//         justify-content: space-between;
+//         height: 100%;
+//         :first-child {
+//           display: flex;
+//           align-items: center;
+//         }
+//       }
+
+//       &__amount {
+//         font-size: 1.2rem;
+//         font-weight: bold;
+//         padding: 3px 5px;
+//         border: 2px solid $mainColor;
+//         border-radius: 2px;
+//       }
+//     }
+//   }
+// }

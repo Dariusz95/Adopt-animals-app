@@ -1,0 +1,223 @@
+@mixin btnHover {
+  background-color: rgba($mainColor, 0.8);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  padding: 0px 15px;
+  z-index: 100;
+  width: 100%;
+  transition: background 0.4s;
+  background: rgb(0 0 0 / 32%);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  line-height: 70px;
+}
+
+.logo {
+  font-size: 2.6rem;
+  padding: 0px 15px;
+  font-weight: bold;
+  color: $mainColor;
+  .v-icon {
+    font-size: 3rem;
+    position: relative;
+    top: -3px;
+    color: whitesmoke;
+  }
+}
+.nav {
+  &-item,
+  &__account {
+    display: inline-block;
+    font-size: 2.2rem;
+    font-weight: bold;
+    padding: 0px 15px;
+    cursor: pointer;
+    z-index: 100;
+    position: relative;
+    transition: color 0.3s;
+  }
+  &__loginBtn {
+    margin: 0 20px;
+    .loginBtn {
+      color: black;
+      margin: 0 10px;
+      font-size: 1.6rem;
+      padding: 15px 20px;
+      border: 3px solid rgba($mainColor, 0.479);
+      border-radius: 15px;
+      margin: auto 0;
+      transition: background-color 0.9s;
+      overflow: hidden;
+      font: caption;
+    }
+    .loginBtn:hover {
+      @include btnHover;
+      // background-color: rgba($mainColor, 0.8);
+    }
+  }
+}
+.link:hover {
+  color: $mainColor;
+}
+.profilBtn {
+  // border-radius: 15px;
+  // box-shadow: 8px 8px 14px 0px rgba(0, 0, 0, 0.3);
+}
+
+.onScroll {
+  background: rgba(255, 255, 255, 0.8);
+}
+.router-link-exact-active {
+  color: $mainColor;
+}
+
+.dropdown-nav {
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 100%;
+  height: 90%;
+  align-items: center;
+  justify-content: center;
+  top: 70px;
+  left: 0;
+  animation: opacityMenu 0.4s alternate;
+  &__item {
+    color: white;
+    font-size: 2.2rem;
+    margin: 20px 0;
+  }
+
+  .loginBtn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: inset 0px 1px 3px 1px rgba(67, 90, 66, 1);
+  }
+
+  .logoutBtn {
+    box-shadow: inset 0px 1px 3px 1px #7d0606;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: transparent;
+    border-style: none;
+    font-size: 26px;
+    color: white;
+  }
+}
+.icon {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  height: 100%;
+  right: 15px;
+  font-size: 3rem;
+  line-height: 50px;
+  cursor: pointer;
+  align-items: center;
+  .profilBtn {
+    margin-right: 5px;
+  }
+
+  .nav-icon {
+    width: 30px;
+    height: 36px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+
+    span {
+      display: block;
+      position: absolute;
+      height: 6px;
+      width: 100%;
+      background: #000000;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: 0.25s ease-in-out;
+    }
+    span:nth-child(1) {
+      top: 4px;
+      transform-origin: left center;
+    }
+    span:nth-child(2) {
+      top: 15px;
+      transform-origin: left center;
+    }
+    span:nth-child(3) {
+      bottom: 4px;
+      transform-origin: left center;
+    }
+  }
+  .nav-icon.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 4px;
+    left: 8px;
+  }
+  .nav-icon.active span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+  }
+  .nav-icon.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    bottom: 4px;
+    left: 8px;
+  }
+}
+// .dropdownNavActive {
+//   transform: translateX(0px);
+// }
+@keyframes opacityMenu {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 950px) {
+  header {
+    .logo {
+      font-size: 32px;
+    }
+  }
+  .icon {
+    font-size: 35px;
+    width: 110px;
+  }
+  .dropdown-nav {
+    &__item {
+      font-size: 26px;
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  nav {
+    justify-content: center;
+  }
+  .logo {
+    .v-icon {
+      color: black;
+    }
+  }
+}
+
+@media (min-width: 950px) and (max-width: 1400px) {
+  .nav {
+    &-item {
+      font-size: 18px;
+    }
+  }
+}
