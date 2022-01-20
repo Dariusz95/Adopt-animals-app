@@ -1,4 +1,4 @@
-from typing_extensions import Required
+# from typing_extensions import Required
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser,PermissionsMixin,BaseUserManager
 from django.conf import settings
@@ -23,7 +23,7 @@ class Animal(models.Model):
 class CustomAccountManager(BaseUserManager):
     def create_user(self,email,username,password,**other_fields):
         if not email:
-            raise ValueError(_('Please provide an email address'))
+            raise ValueError(('Please provide an email address'))
         email=self.normalize_email(email)
         user=self.model(email=email,username=username, **other_fields)
         user.set_password(password)
@@ -34,9 +34,9 @@ class CustomAccountManager(BaseUserManager):
         other_fields.setdefault('is_superuser',True)
         other_fields.setdefault('is_active',True)
         if other_fields.get('is_staff') is not True:
-                raise ValueError(_('Please assign is_staff=True for superuser'))
+                raise ValueError(('Please assign is_staff=True for superuser'))
         if other_fields.get('is_superuser') is not True:
-                raise ValueError(_('Please assign is_superuser=True for superuser'))
+                raise ValueError(('Please assign is_superuser=True for superuser'))
         return self.create_user(email,username,phone_number,password,**other_fields)
 
 class User(AbstractBaseUser,PermissionsMixin):
