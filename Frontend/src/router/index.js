@@ -35,7 +35,7 @@ const routes = [
     path: "/create",
     name: "createAnimal",
     component: createAnimal,
-    // meta: { requiresAuth: true },
+    meta: { requiresAuth: true },
   },
   // { path: "/edit", name: "register", component: register },
   // { path: "/register", name: "register", component: register },
